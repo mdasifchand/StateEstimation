@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c67e8dc3-e46d-422f-a147-b4c0950cd9ba" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ProjectId" id="1Ufai2nu4bcUqp5IFTwD07ii74Y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Makefile" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="someName" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c67e8dc3-e46d-422f-a147-b4c0950cd9ba" name="Default Changelist" comment="" />
+      <created>1575750229180</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575750229180</updated>
+      <workItem from="1575750240651" duration="82000" />
+      <workItem from="1575751342316" duration="3896000" />
+      <workItem from="1575755373995" duration="12305000" />
+      <workItem from="1575771665950" duration="42389000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575752313508">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1575752313508" />
+    <state x="743" y="297" width="426" height="507" key="FileChooserDialogImpl" timestamp="1575752287385">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="743" y="297" width="426" height="507" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1575752287385" />
+    <state width="1874" height="195" key="GridCell.Tab.0.bottom" timestamp="1575782726345">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="195" key="GridCell.Tab.0.bottom/0.25.1920.1055@0.25.1920.1055" timestamp="1575782726345" />
+    <state width="1874" height="195" key="GridCell.Tab.0.center" timestamp="1575782726339">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="195" key="GridCell.Tab.0.center/0.25.1920.1055@0.25.1920.1055" timestamp="1575782726339" />
+    <state width="1874" height="195" key="GridCell.Tab.0.left" timestamp="1575782726339">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="195" key="GridCell.Tab.0.left/0.25.1920.1055@0.25.1920.1055" timestamp="1575782726339" />
+    <state width="1874" height="195" key="GridCell.Tab.0.right" timestamp="1575782726341">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="195" key="GridCell.Tab.0.right/0.25.1920.1055@0.25.1920.1055" timestamp="1575782726341" />
+    <state x="482" y="112" key="SettingsEditor" timestamp="1575755025878">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="482" y="112" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1575755025878" />
+    <state x="653" y="424" key="com.intellij.ide.util.TipDialog" timestamp="1575771666875">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="653" y="424" key="com.intellij.ide.util.TipDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1575771666875" />
+    <state x="653" y="560" key="com.intellij.ide.util.TipDialog/0.25.1920.1415@0.25.1920.1415" timestamp="1575750248504" />
+    <state x="740" y="245" width="431" height="610" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575842088971">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="740" y="245" width="431" height="610" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1920.1055@0.25.1920.1055" timestamp="1575842088971" />
+    <state x="623" y="258" width="672" height="678" key="search.everywhere.popup" timestamp="1575843357352">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="623" y="258" width="672" height="678" key="search.everywhere.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1575843357352" />
+  </component>
+</project>
