@@ -22,7 +22,7 @@ void getRobotPositionEstimate(RobotState& estimatePosn)
 {
     // TODO: Write your procedures to set the current robot position estimate here
 
-// std::cout << estimatePosn.theta << std::endl;
+std::cout << estimatePosn.theta << std::endl;
 estimatePosn = s_get_state;
 
 

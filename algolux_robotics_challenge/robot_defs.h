@@ -13,16 +13,16 @@ const double METERS_PER_PIXEL = 1.0/PIXELS_PER_METER;
 /* Field Constants (in pixels) */
 const int FIELD_LENGTH     = 540;   //5.4 m
 const int FIELD_WIDTH      = 360;   // 3.6 m
-const int FIELD_OFFSET_X   = 30;
-const int FIELD_OFFSET_Y   = 30;
-const int GOAL_LINE_WIDTH  = 80;
-const int GOAL_BOX_LENGTH  = 65;
-const int GOAL_BOX_WIDTH   = 130;
-const int MARKER_OFFSET_X  = 135;
-const int MARKER_OFFSET_Y  = 15;
+const int FIELD_OFFSET_X   = 30;    //0.3
+const int FIELD_OFFSET_Y   = 30;    //0.3
+const int GOAL_LINE_WIDTH  = 80;    //0.8
+const int GOAL_BOX_LENGTH  = 65;    //0.65
+const int GOAL_BOX_WIDTH   = 130;   //1.13
+const int MARKER_OFFSET_X  = 135;  //1.35
+const int MARKER_OFFSET_Y  = 15;   //0.15
 
 /* Robot Radius (in pixels) */
-const int ROBOT_RADIUS = 7;
+const int ROBOT_RADIUS = 7;     //0.07
 
 /* Number of Field Landmarks */
 const int NUM_LANDMARKS = 4;

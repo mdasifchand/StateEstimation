@@ -3,10 +3,9 @@
 
 #include <vector>
 #include "robot_defs.h"
-#include "eigen-3.2.10/Eigen/Dense"
 #include <math.h>
-#include "eigen-3.2.10/Eigen/SVD"
-
+#include <eigen3/Eigen/Dense>
+#include <eigen3/Eigen/SVD>
 
 
 typedef Eigen::Matrix<double,3,3,Eigen::RowMajor> Matrix3D; // it's possible to use global typedefs from Eigen however if not for RowMajor, transposes should be used to compensate
