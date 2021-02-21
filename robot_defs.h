@@ -18,8 +18,8 @@ const int FIELD_OFFSET_Y   = 30;
 const int GOAL_LINE_WIDTH  = 80;
 const int GOAL_BOX_LENGTH  = 65;
 const int GOAL_BOX_WIDTH   = 130;
-const int MARKER_OFFSET_X  = 135;
-const int MARKER_OFFSET_Y  = 15;
+const int MARKER_OFFSET_X  = 135;  // x offset mean move mouse horizontal
+const int MARKER_OFFSET_Y  = 15;   // y offset means move mouse vertical
 
 /* Robot Radius (in pixels) */
 const int ROBOT_RADIUS = 7;

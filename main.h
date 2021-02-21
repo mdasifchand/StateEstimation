@@ -3,7 +3,10 @@
 
 #include <vector>
 #include "robot_defs.h"
+#include <eigen3/Eigen/Dense>
 
+
+typedef  Eigen::Matrix <double, 3,3,Eigen::RowMajor> Mat3d;
 // Sets current robot position estimate
 void getRobotPositionEstimate(RobotState& estimatePosn);
 
@@ -17,6 +20,18 @@ void sensorUpdate(std::vector<MarkerObservation> observations);
 void myinit(RobotState robotState, RobotParams robotParams, 
             FieldLocation markerLocations[NUM_LANDMARKS]);
 void mydisplay();
+
+void unCertainityEstimation( RobotState mu, Mat3d& Cov )
+{
+
+
+
+
+
+}
+
+
+
 int  mykeyboard(unsigned char key);
 
 #endif

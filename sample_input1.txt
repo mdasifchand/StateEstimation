@@ -1,4 +1,4 @@
-angle_fov: 25.0
+angle_fov: 120.0
 sensor_noise_distance: 0.05
 sensor_noise_orientation: 0.35
 odom_noise_rotation_from_rotation: 0.2

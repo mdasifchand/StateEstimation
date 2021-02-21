@@ -1,7 +1,7 @@
 # Localization Challenge
 # Makefile
 
-INCLUDE = -I/usr/include/
+INCLUDE = -I/usr/include/ 
 LIBRARIES = controller.a -L/usr/lib/x86_64-linux-gnu/ -lGL -lGLU -lglut -lm -lXi -lXmu
 
 COMPILER = g++ --std=c++11
@@ -10,7 +10,7 @@ COMPILERFLAGS = -no-pie $(INCLUDE)
 
 PROGRAM =	localization_test
 
-SOURCE =	main.cpp main.h 
+SOURCE =	main.cpp main.h
 
 OBJECT =	main.o
 
