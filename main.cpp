@@ -18,18 +18,19 @@
  */
 
 typedef  Eigen::Matrix <double, 3,3,Eigen::RowMajor> Mat3d;
-
-
-
+static RobotParams rPar;
+static FieldLocation* fL;
+static Mat3d sigma;
+static RobotState mu;
 
 
 void getRobotPositionEstimate(RobotState& estimatePosn)
 {
     // TODO: Write your procedures to set the current robot position estimate here
     
-//    estimatePosn.x = 0.0;
-//    estimatePosn.y = 0.0;
-//    estimatePosn.theta = 0.0;
+ //   estimatePosn.x = ;
+  //  estimatePosn.y = 0.0;
+  //  estimatePosn.theta = 0.0;
 
 }
 
@@ -63,9 +64,9 @@ void motionUpdate(RobotState delta)
 
 
     RobotState pred_mu; // predicted mean state
-    RobotState mu;
+    Mat3d sigma_t_p;
     Mat3d G;
-
+    Mat3d R; //includes all those noises
 
 
     getRobotPositionEstimate(mu); // this is your last best estimate which you had
@@ -84,13 +85,14 @@ void motionUpdate(RobotState delta)
 
     Mat3d J_G = Eigen::MatrixXd::Identity(3,3) + G;
 
+   R << rPar.odom_noise_translation_from_translation, rPar.odom_noise_translation_from_translation, rPar.odom_noise_translation_from_rotation,
+        rPar.odom_noise_translation_from_translation, rPar.odom_noise_translation_from_translation, rPar.odom_noise_translation_from_rotation,
+        rPar.odom_noise_rotation_from_translation, rPar.odom_noise_rotation_from_translation, rPar.odom_noise_rotation_from_rotation;
 
 
-
-
-
-
-
+   sigma_t_p = G*sigma*G.transpose() + R; //sigma is from t-1 sigma_t_p is basically predicting for state t from t-1
+   sigma = sigma_t_p; // predicting sigma at t from t-1 and then updating the sigma
+   mu = pred_mu;
 
 
 }
@@ -113,12 +115,49 @@ void sensorUpdate(std::vector<MarkerObservation> observations)
 {
     // TODO: Write your sensor update procedures here
 
-   for( auto it = observations.begin(); it != observations.end(); ++it  ){
 
+    Eigen::Matrix< double, 1000, 2, Eigen::RowMajor >A; // [ d1 theta1, d2 theta2, ...], rows are taken as 1000 at max,cols are 2
+    Eigen::Matrix <double, 1000, 2, Eigen::RowMajor> exZ;
+    Eigen::Matrix <double, 2000, 3, Eigen::RowMajor> H;
+    Eigen::Matrix <double,2000,2000, Eigen::RowMajor> N; //sensor noise matrix
+   //for( auto it = observations.begin(); it != observations.end(); ++it  ){
+
+   for( std::size_t i=0; i < observations.size(); i++){
       // std::cout << "Current marker index is : " << it->markerIndex << std::endl;
       // std::cout << "marker distance         : " << it->distance << std::endl;
       // std::cout << "marker angel            : " << it->orientation << std::endl;
       // std::cout << std::endl;
+
+
+       A.row(i) << observations[i].distance, observations[i].orientation;
+
+       double zX = fL[observations[i].markerIndex].x - mu.x;
+       double zY = fL[observations[i].markerIndex].y - mu.y;
+       double range = sqrt(pow(zX,2)+ pow(zY,2));
+
+       exZ.row(i) << range, atan2(zY,zX)-mu.theta;
+
+       H.block<2,3>(2*i,0) <<  -zX/range,          -zY/range,        0,
+                                                zY/pow(range,2),-zX/pow(range,2), -1;
+
+
+       N.block<2,2>(2*i,2*i) << rPar.sensor_noise_distance, 0,
+                                0, rPar.sensor_noise_orientation;
+
+       //Kalam gain
+
+
+       Eigen::MatrixXf Int = H* sigma * H.transpose() + N;
+
+       Eigen::MatrixXf K= sigma * H.transpose()
+
+
+
+
+
+
+
+
    }
 
     /*   M1 ------- M2
@@ -147,8 +186,16 @@ void myinit(RobotState robotState, RobotParams robotParams,
     //markerLocations[2] = {135* METERS_PER_PIXEL, -30*METERS_PER_PIXEL};
     //markerLocations[3] = {-135* METERS_PER_PIXEL, -30* METERS_PER_PIXEL};
 */
+    mu = robotState;
+    sigma << 0,0,0,
+             0,0,0,
+              0,0,0;
+    rPar = robotParams;
+    fL = markerLocations;
+
 
     //RobotParams are initialized from the text file
+
 
 }
 

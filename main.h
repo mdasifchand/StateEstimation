@@ -8,6 +8,8 @@
 
 typedef  Eigen::Matrix <double, 3,3,Eigen::RowMajor> Mat3d;
 // Sets current robot position estimate
+
+
 void getRobotPositionEstimate(RobotState& estimatePosn);
 
 // Robot motion update
@@ -20,15 +22,6 @@ void sensorUpdate(std::vector<MarkerObservation> observations);
 void myinit(RobotState robotState, RobotParams robotParams, 
             FieldLocation markerLocations[NUM_LANDMARKS]);
 void mydisplay();
-
-void unCertainityEstimation( RobotState mu, Mat3d& Cov )
-{
-
-
-
-
-
-}
 
 
 
