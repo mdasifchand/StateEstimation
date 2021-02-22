@@ -144,12 +144,12 @@ void sensorUpdate(std::vector<MarkerObservation> observations)
        N.block<2,2>(2*i,2*i) << rPar.sensor_noise_distance, 0,
                                 0, rPar.sensor_noise_orientation;
 
-       //Kalam gain
+       //Kalman gain
 
 
-       Eigen::MatrixXf Int = H* sigma * H.transpose() + N;
+       Eigen::MatrixXf Int = H* sigma * H.transpose() + N; //intermediate inverse
 
-       Eigen::MatrixXf K= sigma * H.transpose()
+      //TODO: Kalman gain and calculate innovation and update mu/sigma at the latest state
 
 
 
