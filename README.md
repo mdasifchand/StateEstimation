@@ -28,6 +28,8 @@ between X(t-1) and X (t)
 X ~ P(X), X is i.i.d (Need a check here). X represents our state at every interval in our case of 
 2d Robot, two parameters are enough to estimate any state [ range, bearing ]
 
+![Image ](https://github.com/mdasifchand/StateEstimation/blob/main/images/lidar_example.png)
+
 
 
 
