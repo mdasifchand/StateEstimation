@@ -16,10 +16,11 @@ Also the relevance of the motion and observation model comes from Bayesian infer
 
 Bayesian inference is basically used to derive the posterior probability from two important known values : <br/>
 - Prior
-- Likelihood (This is not a probability) 
+- Likelihood  
 
-P(A/B) (read probaility of A given B) ~ proporitional to P(A/B) (read likelihood of A given B) times P(B) (probability of occurence of B)
+P(A/B) (read probaility of A given B) ~ proporitional to P(B/A) (read likelihood of A given B) times P(B) (probability of occurence of B)
 
+there is a denominator P(B)- > also called as marginal likelihood. Which is what you after you integrate P(B/A) of likelhood over all possible A's
 
 Assuming, you move ahead along the discrete time intervals, in order to estimate stochastic probabilistic distribution
 between X(t-1) and X (t)
