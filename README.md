@@ -14,6 +14,13 @@ However most of the problems are not linear in nature. And this forms the crux o
 
 Also the relevance of the motion and observation model comes from Bayesian inference of the graph .
 
+Bayesian inference is basically used to derive the posterior probability from two important known values : <br/>
+- Prior
+- Likelihood (This is not a probability) 
+
+P(A/B) (read probaility of A given B) ~ proporitional to P(A/B) (read likelihood of A given B) times P(B) (probability of occurence of B)
+
+
 Assuming, you move ahead along the discrete time intervals, in order to estimate stochastic probabilistic distribution
 between X(t-1) and X (t)
 
