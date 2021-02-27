@@ -88,10 +88,11 @@ void motionUpdate(RobotState delta)
 void sensorUpdate(std::vector<MarkerObservation> observations)
 {
     // TODO: Write your sensor update procedures here
-    Eigen::Matrix< double, 1000, 2, Eigen::RowMajor >A; // [ d1 theta1, d2 theta2, ...], rows are taken as 1000 at max,cols are 2
-    Eigen::Matrix <double, 1000, 2, Eigen::RowMajor> exZ;
-    Eigen::Matrix <double, 2000, 3, Eigen::RowMajor> H;
-    Eigen::Matrix <double,2000,2000, Eigen::RowMajor> N; //sensor noise matrix
+    Eigen::Matrix< double, 500, 2, Eigen::RowMajor >A; // [ d1 theta1, d2 theta2, ...], rows are taken as 1000 at max,cols are 2
+    Eigen::Matrix <double, 500, 2, Eigen::RowMajor> exZ;
+    Eigen::Matrix <double, Eigen::Dynamic, 3, Eigen::RowMajor> H;
+    Eigen::Matrix <double,Eigen::Dynamic,Eigen::Dynamic, Eigen::RowMajor> N; ; // initially set to zero.
+    ; //sensor noise matrix
    //for( auto it = observations.begin(); it != observations.end(); ++it  ){
 
    for( std::size_t i=0; i < observations.size(); i++){
@@ -106,13 +107,17 @@ void sensorUpdate(std::vector<MarkerObservation> observations)
        exZ.row(i) << range, atan2(zY,zX)-mu.theta;
        H.block<2,3>(2*i,0) <<  -zX/range,          -zY/range,        0,
                                                 zY/pow(range,2),-zX/pow(range,2), -1;
+
+
+       N.block<2,2000>(2*i,2*i) = Eigen::MatrixXd::Zero(2,2000);
        N.block<2,2>(2*i,2*i) << rPar.sensor_noise_distance, 0,
                                 0, rPar.sensor_noise_orientation;
        //Kalman gain
-       Eigen::MatrixXf Int = H* sigma * H.transpose() + N; //intermediate inverse
+       Eigen::MatrixXd Int = H* sigma * H.transpose() + N; //intermediate inverse, size of intermediate matrix Int is 2000x2000
       //TODO: Kalman gain and calculate innovation and update mu/sigma at the latest state       
+       Eigen::MatrixXd K = sigma * H.transpose() * Int.inverse();
 
-	
+
 
 
    }

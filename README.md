@@ -41,23 +41,9 @@ Assume your robot looks something like this (Top view). There is a sensor mounte
         ||              ||
         
 
-
 ![Image ](https://github.com/mdasifchand/StateEstimation/blob/main/images/lidar_example.png)
 
 
-
-
-
-
-
-
-
-# Description
-
-There are two important components here :
-
-The most important t      
-        
         
 ### Motion Model :
 
