@@ -25,7 +25,7 @@ there is a denominator P(B)- > also called as marginal likelihood. Which is what
 Assuming, you move ahead along the discrete time intervals, in order to estimate stochastic probabilistic distribution
 between X(t-1) and X (t)
 
-X ~ P(X), X is i.i.d (Need a check here). X represents our state at every interval in our case of 
+X ~ P(X), X is random variable and i.i.d (Need a check here). X represents our state at every interval in our case of 
 2d Robot, two parameters are enough to estimate any state [ range, bearing ]
 
 
