@@ -20,7 +20,7 @@ Bayesian inference is basically used to derive the posterior probability from tw
 
 P(A/B) (read probaility of A given B) ~ proporitional to P(B/A) (read likelihood of A given B) times P(B) (probability of occurence of B)
 
-there is a denominator P(B)- > also called as marginal likelihood. Which is what you after you integrate P(B/A) of likelhood over all possible A's
+there is a denominator P(B)- > also called as marginal likelihood. Which is what you get after you integrate P(B/A) of likelhood over all possible A's
 
 Assuming, you move ahead along the discrete time intervals, in order to estimate stochastic probabilistic distribution
 between X(t-1) and X (t)
