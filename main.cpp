@@ -28,9 +28,9 @@ void getRobotPositionEstimate(RobotState& estimatePosn)
 {
     // TODO: Write your procedures to set the current robot position estimate here
     
- //   estimatePosn.x = ;
-  //  estimatePosn.y = 0.0;
-  //  estimatePosn.theta = 0.0;
+    estimatePosn.x = mu.x;
+    estimatePosn.y = mu.y;
+    estimatePosn.theta = mu.theta;
 
 }
 
@@ -76,6 +76,9 @@ void motionUpdate(RobotState delta)
    sigma_t_p = G*sigma*G.transpose() + R; //sigma is from t-1 sigma_t_p is basically predicting for state t from t-1
    sigma = sigma_t_p; // predicting sigma at t from t-1 and then updating the sigma
    mu = pred_mu;
+   std::cout << pred_mu.x << " " << pred_mu.y << " " << pred_mu.theta <<" "<< std::endl;
+   std::cout << sigma << std::endl;
+
 }
 
 /**
@@ -88,10 +91,10 @@ void motionUpdate(RobotState delta)
 void sensorUpdate(std::vector<MarkerObservation> observations)
 {
     // TODO: Write your sensor update procedures here
-    Eigen::Matrix< double, 500, 2, Eigen::RowMajor >A; // [ d1 theta1, d2 theta2, ...], rows are taken as 1000 at max,cols are 2
-    Eigen::Matrix <double, 500, 2, Eigen::RowMajor> exZ;
-    Eigen::Matrix <double, Eigen::Dynamic, 3, Eigen::RowMajor> H;
-    Eigen::Matrix <double,Eigen::Dynamic,Eigen::Dynamic, Eigen::RowMajor> N; ; // initially set to zero.
+    Eigen::Matrix< double, 8, 2, Eigen::RowMajor >A; // [ d1 theta1, d2 theta2, ...], rows are taken as 1000 at max,cols are 2
+    Eigen::Matrix <double, 8, 2, Eigen::RowMajor> exZ;
+    Eigen::Matrix <double, 16, 3, Eigen::RowMajor> H;
+    Eigen::Matrix <double,16,16, Eigen::RowMajor> N;  // initially set to zero.
     ; //sensor noise matrix
    //for( auto it = observations.begin(); it != observations.end(); ++it  ){
 
@@ -100,22 +103,25 @@ void sensorUpdate(std::vector<MarkerObservation> observations)
       // std::cout << "marker distance         : " << it->distance << std::endl;
       // std::cout << "marker angel            : " << it->orientation << std::endl;
       // std::cout << std::endl;
+      //std::cout << "TOTAL OBERSVATOION :" << observations.size() << std::endl;
        A.row(i) << observations[i].distance, observations[i].orientation;
        double zX = fL[observations[i].markerIndex].x - mu.x;
        double zY = fL[observations[i].markerIndex].y - mu.y;
        double range = sqrt(pow(zX,2)+ pow(zY,2));
+
+
        exZ.row(i) << range, atan2(zY,zX)-mu.theta;
        H.block<2,3>(2*i,0) <<  -zX/range,          -zY/range,        0,
                                                 zY/pow(range,2),-zX/pow(range,2), -1;
 
-
-       N.block<2,2000>(2*i,2*i) = Eigen::MatrixXd::Zero(2,2000);
        N.block<2,2>(2*i,2*i) << rPar.sensor_noise_distance, 0,
                                 0, rPar.sensor_noise_orientation;
        //Kalman gain
        Eigen::MatrixXd Int = H* sigma * H.transpose() + N; //intermediate inverse, size of intermediate matrix Int is 2000x2000
       //TODO: Kalman gain and calculate innovation and update mu/sigma at the latest state       
        Eigen::MatrixXd K = sigma * H.transpose() * Int.inverse();
+
+
 
 
 
