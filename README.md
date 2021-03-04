@@ -59,14 +59,3 @@ This is the model of how the motion of a Robot is performed between time frame t
 
 
 Dependencies : Eigen, OpenGL
-
-Work in progress ... 
-
-TODO: Fix kalman gain and propagate uncertainity with respect to all the landmarks under visibility
-
-Goal : To implement landmark based localization and propagate uncertainities with EKF. 
-
-
-
-
-
