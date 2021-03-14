@@ -49,8 +49,10 @@ Assume your robot looks something like this (Top view). There is a sensor mounte
 
 This is the model of how the motion of a Robot is performed between time frame t-1 to t
 
-
-
+TODO:
+Model
+Linearization of Model (if it's non linear)
+Time update step
 _________________________________________________________________________________________________
 
 ### Observation Model :
