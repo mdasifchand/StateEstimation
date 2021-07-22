@@ -1,4 +1,4 @@
-# Landmark based localization (EKF)
+# Landmark based localization (Extended Kalman Filter)
 
 # Assumptions: 
 
